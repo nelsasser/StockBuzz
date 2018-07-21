@@ -5,6 +5,11 @@ document.getElementById('ticker').onkeydown = function(event) {
 }
 
 function findStock() {
-  var ticker = document.getElementById("ticker").value;
-  console.log(ticker);
+  var stock = new Stock();
+  var s = stock.requestStockQuote(ticker);
+
+  var div = document.createElement('div');
+  div.id = 'quote'
+  div.className = 'quote';
+  document.getElementById('main').appendChild(div);
 }
