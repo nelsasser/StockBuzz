@@ -23,7 +23,15 @@
 				var div = document.createElement('div');
 				div.id = 'quote'
 				div.className = 'quote';
+				div.value = ticker;
 				document.getElementById('main').appendChild(div);
+				var latest = s.latest;
+				var open = s.open;
+				var diff = open - latest;
+
+				var data = {
+					latest, open, diff
+				};
 			}
 
 		</script>
