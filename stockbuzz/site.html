@@ -1,9 +1,21 @@
 <html>
 	<head>
-		<title>Hi</title>
+		<title>StockBuzz</title>
 		<script type="text/javascript" src="js/twittergetter.js"></script>
 	</head>
 	<body>
-		Hi world
+		<div>
+			Company Ticker: <input type="text" id="ticker"></br>
+			<input type="Submit" value="Submit" onclick="findStock()"></br>
+		</div>
+
+		<script type="text/javascript">
+
+			function findStock(){
+				var ticker = document.getElementById("ticker").value;
+				console.log(ticker);
+			}
+
+		</script>
 	</body>
 </html>
