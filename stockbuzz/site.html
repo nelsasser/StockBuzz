@@ -1,10 +1,13 @@
 <html>
 	<head>
 		<title>StockBuzz</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/stock.js"></script>
 		<script type="text/javascript" src="js/twittergetter.js"></script>
+		<style type="text/css" src="style.css"></style>
 	</head>
 	<body>
-		<div>
+		<div id='main'>
 			Company Ticker: <input type="text" id="ticker"></br>
 			<input type="Submit" value="Submit" onclick="findStock()"></br>
 		</div>
@@ -13,7 +16,14 @@
 
 			function findStock(){
 				var ticker = document.getElementById("ticker").value;
-				console.log(ticker);
+				
+				var stock = new Stock();
+				var s = stock.requestStockQuote(ticker);
+
+				var div = document.createElement('div');
+				div.id = 'quote'
+				div.className = 'quote';
+				document.getElementById('main').appendChild(div);
 			}
 
 		</script>
