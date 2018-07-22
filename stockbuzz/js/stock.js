@@ -1,7 +1,7 @@
 /*
 NEEDS TO BE OBFUSCATED BEFORE RELEASE
 */
-var api_key = '*';
+var api_key = 'GzQxwboKx3Nwv6rCfzFx';
 
 var ctx;
 var chart;
@@ -88,32 +88,39 @@ function genStockData() {
 	/*
 	creates the basic info for the stock next to the graph
 	*/
-	var name = stockData.name;
-	var open = stockData.open;
-	var latest = stockData.latest;
-	var diff = open - latest;
+	{
+		var name = stockData.name;
+		var open = stockData.open;
+		var latest = stockData.latest;
+		var diff = open - latest;
 
-	document.getElementById('name').innerHTML = name;
-	document.getElementById('open').innerHTML = open;
-	document.getElementById('latest').innerHTML = latest;
+		document.getElementById('name').innerHTML = name;
 
-	var tri = document.createElement('div');
+		//remove old triangle if it exists
+		var old_tri = document.getElementById('ticker_tri');
+		if(old_tri != undefined) {
+			old_tri.parentNode.removeChild(old_tri);
+		}
 
-	var di = diff.toFixed(2);
+		var tri = document.createElement('div');
+		tri.id = 'ticker_tri';
 
-	if(diff < 0) {
-		tri.className = 'arrow-down';
-		document.getElementById('diff').className = 'red_text';
-		di = "- " + di;
-	} else {
-		tri.className = 'arrow-up';
-		document.getElementById('diff').className = 'green_text';
-		di = "+ " + di;
+
+		var di = diff.toFixed(2);
+
+		if(diff < 0) {
+			tri.className = 'arrow-down';
+			document.getElementById('diff').className = 'red_text';
+			di = "- " + di;
+		} else {
+			tri.className = 'arrow-up';
+			document.getElementById('diff').className = 'green_text';
+			di = "+ " + di;
+		}
+
+		document.getElementById('info').appendChild(tri);
+		document.getElementById('diff').innerHTML = di;
 	}
-
-	document.getElementById('info').appendChild(tri);
-	document.getElementById('diff').innerHTML = di;
-
 }
 
 function updateChart(ticker, stockData) {
