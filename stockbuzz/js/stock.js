@@ -1,7 +1,7 @@
 /*
 NEEDS TO BE OBFUSCATED BEFORE RELEASE
 */
-var api_key = 'GzQxwboKx3Nwv6rCfzFx';
+var api_key = '*';
 
 var ctx;
 var chart;
@@ -9,7 +9,7 @@ var chart;
 init();
 
 function init() {
-	var ctx = document.getElementById('stock_chart').getContext('2d');
+	var ctx = document.getElementById('stock_chart');
 	var chart = new Chart(ctx, {
 		type: 'line'
 	});
