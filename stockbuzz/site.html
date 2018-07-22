@@ -2,10 +2,22 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/stock.js"></script>
     <script type="text/javascript" src="js/twittergetter.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
+    <style type="text/css">
+		  #graph {
+			  width: 50%;
+			  height: 40%;
+		  }
+
+		  .nope {
+			  width: 100%;
+			  height: 100%;
+		  }
+	  </style>
 </head>
 <body>
 
@@ -14,8 +26,12 @@
 	<a href="#about">About</a>
 	<div class="search-container">
 		<input type="text" id="ticker" placeholder="Search.." name="search">
-		<button onclick="findStock()">GO</button>
+		<button onclick="genStockData()">GO</button>
 	</div>
+  <div id="graph">
+		<canvas id="stock_chart" class="nope"></canvas>
+	</div>
+    <script type="text/javascript" src="js/stock.js"></script>
 </div>
 
 <div style="padding-left:16px">
