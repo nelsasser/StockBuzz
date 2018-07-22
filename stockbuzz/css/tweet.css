@@ -74,3 +74,32 @@
 	display: inline-flex;
 	border-radius: 8px;
 }
+
+.retweet_container {
+	float: right;
+	margin-right: 20px;
+}
+
+.retweet {
+	text-align: right;
+	display: inline;
+	margin-right: 10px
+}
+
+
+.like_container {
+	float: right;
+}
+
+.icon {
+	width: 24px;
+	height: 24px;
+	display: inline;
+	transform: translate(0, 5px);
+}
+
+.like {
+	text-align: right;
+	display: inline;
+	margin-right: 10px; 
+}

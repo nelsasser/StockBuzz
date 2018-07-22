@@ -5,7 +5,15 @@ function TweetBuilder() {
 
 }
 
-TweetBuilder.prototype.buildTweet = function(handle_name, message_data, time, profile_src, like, retweets) {
+TweetBuilder.prototype.destroyAllTweets = function() {
+	var tweets = document.getElementsByClassName('tweet');
+
+	while(tweets.length > 0) {
+		tweets[0].parentNode.removeChild(tweets[0]);
+	}
+}
+
+TweetBuilder.prototype.buildTweet = function(handle_name, message_data, time, profile_src, likes, retweets) {
 	//get the lower tweets div to append stuff too
 	var par = document.getElementById('lower_tweets');
 
@@ -69,6 +77,37 @@ TweetBuilder.prototype.buildTweet = function(handle_name, message_data, time, pr
 
 	//appennd timestamp to user_meta
 	user_meta.appendChild(timestamp);
+
+	var like_container = document.createElement('div');
+	like_container.className = 'like_container';
+
+	var like = document.createElement('p');
+	like.className = 'like';
+	like.innerHTML = likes;
+
+	var like_icon = document.createElement('img');
+	like_icon.className = 'icon';
+	like_icon.alt = 'like-icon';
+	like_icon.src = './icons/like.svg';
+	like_container.appendChild(like);
+	like_container.appendChild(like_icon);
+	user_meta.appendChild(like_container);
+
+	var retweet_container = document.createElement('div');
+	retweet_container.className = 'retweet_container';
+
+	var retweet = document.createElement('p');
+	retweet.className = 'retweet';
+	retweet.innerHTML = retweets;
+
+	var retweet_icon = document.createElement('img');
+	retweet_icon.className = 'icon';
+	retweet_icon.alt = 'retweet-icon';
+	retweet_icon.src = './icons/rt.svg';
+	retweet_container.appendChild(retweet);
+	retweet_container.appendChild(retweet_icon);
+	user_meta.appendChild(retweet_container);
+
 
 	//append user_meta top tweet
 	tweet.appendChild(user_meta);

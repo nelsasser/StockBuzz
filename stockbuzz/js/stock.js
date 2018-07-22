@@ -114,7 +114,7 @@ function genStockData() {
 		if(diff < 0) {
 			tri.className = 'arrow-down';
 			document.getElementById('diff').className = 'red_text';
-			di = "- " + di;
+			di = "- " + di * -1;
 		} else {
 			tri.className = 'arrow-up';
 			document.getElementById('diff').className = 'green_text';
