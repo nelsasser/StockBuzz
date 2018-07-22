@@ -1,7 +1,7 @@
 /*
 NEEDS TO BE OBFUSCATED BEFORE RELEASE
 */
-var api_key = 'GzQxwboKx3Nwv6rCfzFx';
+var api_key = '*';
 
 var ctx;
 var chart;
