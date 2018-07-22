@@ -1,0 +1,79 @@
+#graph {
+	width: 100%;
+	height: 80%;
+}
+
+#stocks {
+	width: 50%;
+	border-right: 4px solid gray;
+}
+
+.nope {
+	width: 100%;
+	height: 100%;
+}
+
+.stock_info {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	width: 60%;
+	height:20%;
+	padding: 10px;
+	overflow: hidden;
+	border: none;
+	-webkit-border-radius: 2px 2px 2px 2px;
+	border-radius: 2px 2px 1px 2px;
+	font: normal 18px/1 "cabin", Helvetica, sans-serif;
+	color: rgba(50,60,50,1);
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	background: #d6d6d6;
+	-webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+	box-shadow: 0px 0px 0px 0 rgba(0,0,0,0.3) ;
+	text-shadow: 0px 0px 0px rgba(0,0,0,0.2) ;
+	margin-left: 10%;
+}
+
+.arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 17px solid transparent;
+	border-right: 17px solid transparent;
+
+	border-bottom: 20px solid #77d138;
+
+	display: inline-flex;
+
+	transform: translate(0, -15px);
+}
+
+.arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+
+	border-top: 20px solid #ef6969;
+
+	display: inline-flex;
+
+	padding-top: 0px;
+}
+
+.stuff {
+	padding: 15px;
+	display: inline-flex;
+}
+
+.price_text {
+	display: block;
+}
+
+.red_text {
+	color: red;
+}
+
+.green_text {
+	color: green;
+}
