@@ -9,7 +9,7 @@ function twitterFetch(){
 
   request.open("GET", url+"?"+params, false);
   request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-  request.send(JSON.stringify({'search': name}));
+  request.send(null);
 
   /*request.onload = function (e) {
     if (request.readyState === 4) {
