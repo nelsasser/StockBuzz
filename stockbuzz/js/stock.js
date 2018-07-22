@@ -1,5 +1,4 @@
 /**
-@authot: Nick Elsasser
 */
 
 /*

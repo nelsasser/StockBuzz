@@ -14,6 +14,7 @@
 	box-sizing: content-box;
 	width: 100%;
 	min-width: 500px;
+	max-width: 600px;
 	height: 150px;
 	padding: 20px;
 	overflow: hidden;
@@ -29,9 +30,10 @@
 	-webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0.3) ;
 	box-shadow: 0 0 0 0 rgba(0,0,0,0.3) ;
 	text-shadow: 0 0 1px rgba(0,0,0,0.2) ;
-	margin-left: 12.5%;
+	margin-left: 7.5%;
 	margin-top: 10%;
 	display: block;
+	margin-right: 7.5%;
 }
 
 
