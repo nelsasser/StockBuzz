@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>StockBuzz</title>
+	<title>Stock Buzz</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-    	<script type="text/javascript" src="js/stock.js"></script>
-    	<script type="text/javascript" src="js/twittergetter.js"></script>
-    	<link rel="stylesheet" href="./css/styles.css">
-    	<link rel="stylesheet" href="./css/stock_style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script type="text/javascript" src="js/stock.js"></script>
+    <script type="text/javascript" src="js/twittergetter.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/stock_style.css">
 </head>
 	<body>
 
@@ -19,10 +19,14 @@
 				<button onclick="genStockData()">GO</button>
 			</div>
 
-			<div style="padding-top: 24px;">
+			<div>
 				<center>
-					<h2><center>StockBuzz</center></h2>
-					<p id="info1">This will be information about the webite</p>
+					<center>
+						<h2 style="transform: translate(2.8%, 0);">StockBuzz</h2>
+					</center>
+					<center>
+						<p id="info1">Compare stocks values to public opinionn through solcial media.</p>
+					</center>
 				</center>
 			</div>
 
@@ -31,22 +35,25 @@
 					<canvas id="stock_chart" class="nope"></canvas>
 				</div>
 
-				<div id="info" class="stock_info">
-					<div class="stuff">
-						<p id="name">stock info appears here</p>
-					</div>
+				<center>
+					<div id="info" class="stock_info">
+						<div class="stuff">
+							<p id="name">stock info appears here</p>
+						</div>
 
-					<div class="stuff">
-						<div class='price_text'>
-							<p id='diff'>difference</p>
+						<div class="stuff">
+							<div class='price_text'>
+								<p id='diff'>difference</p>
+							</div>
 						</div>
 					</div>
-				</div>
+				</center>
 			</div>
 		</div>
 
 		<script type="text/javascript" src="js/stock.js"></script>
-		<script>
+
+		<script type="text/javascript">
 			window.onload = function() {
 				document.getElementById('ticker').value = 'AAPL';
 				genStockData();
