@@ -1,5 +1,5 @@
 function twitterFetch(){
-  const url = 'http://localhost:3000/twitter'
+  const url = 'http://ec2-18-220-190-187.us-east-2.compute.amazonaws.com/twitter'
 
   var t = document.getElementById('ticker').value;
   var name = new Stock().requestStockQuote(t).name;
