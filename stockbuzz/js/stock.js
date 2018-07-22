@@ -1,18 +1,30 @@
 /*
 NEEDS TO BE OBFUSCATED BEFORE RELEASE
 */
-var api_key = '*';
+var api_key = 'GzQxwboKx3Nwv6rCfzFx';
 
 var ctx;
 var chart;
 
-init();
+window.onload = function(){
+	init();
+}
 
 function init() {
-	var ctx = document.getElementById('stock_chart');
-	var chart = new Chart(ctx, {
-		type: 'line'
-	});
+	ctx = document.getElementById('stock_chart').getContext('2d');
+	chart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: [],
+				datasets: [{
+					data: [],
+					label: "",
+					fill: true,
+					backgroundColor: '',
+					borderColor: ''
+				}]
+			}
+		});
 }
 
 function findStock(ticker){
@@ -39,34 +51,69 @@ function getTicker() {
 }
 
 function genStockData() {
-	var ticker = document.getElementById("ticker").value;
-	var stockData = findStock(ticker);
+	/*
+	creates the nice, beautifully animated graph
+	*/
+	{
+		var ticker = document.getElementById("ticker").value;
+		var stockData = findStock(ticker);
 
-	if(ctx === undefined) {
-		ctx = document.getElementById('stock_chart');
+		if(ctx === undefined) {
+			ctx = document.getElementById('stock_chart');
+		}
+
+		if(chart === undefined) {
+			chart = new Chart(ctx, {
+				type: 'line',
+				data: {
+					labels: [],
+					datasets: [{
+						data: [],
+						label: "",
+						fill: true,
+						backgroundColor: '',
+						borderColor: ''
+					}]
+				}
+			});
+		}
+
+		if(stockData === null) {
+			console.log("Stock ticker not found.");
+		} else {
+			updateChart(ticker, stockData);
+		}
 	}
 
-	if(chart === undefined) {
-		chart = new Chart(ctx, {
-			type: 'line',
-			data: {
-				labels: [],
-				datasets: [{
-					data: [],
-					label: "",
-					fill: true,
-					backgroundColor: '',
-					borderColor: ''
-				}]
-			}
-		});
-	}
+	/*
+	creates the basic info for the stock next to the graph
+	*/
+	var name = stockData.name;
+	var open = stockData.open;
+	var latest = stockData.latest;
+	var diff = open - latest;
 
-	if(stockData === null) {
-		console.log("Stock ticker not found.");
+	document.getElementById('name').innerHTML = name;
+	document.getElementById('open').innerHTML = open;
+	document.getElementById('latest').innerHTML = latest;
+
+	var tri = document.createElement('div');
+
+	var di = diff.toFixed(2);
+
+	if(diff < 0) {
+		tri.className = 'arrow-down';
+		document.getElementById('diff').className = 'red_text';
+		di = "- " + di;
 	} else {
-		updateChart(ticker, stockData);
+		tri.className = 'arrow-up';
+		document.getElementById('diff').className = 'green_text';
+		di = "+ " + di;
 	}
+
+	document.getElementById('info').appendChild(tri);
+	document.getElementById('diff').innerHTML = di;
+
 }
 
 function updateChart(ticker, stockData) {
