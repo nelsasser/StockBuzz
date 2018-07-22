@@ -37,13 +37,6 @@
 					</div>
 
 					<div class="stuff">
-						<div class="price_text">
-							<p id="open">open</p>
-							<p id="latest">latest</p>
-						</div>
-					</div>
-
-					<div class="stuff">
 						<div class='price_text'>
 							<p id='diff'>difference</p>
 						</div>
@@ -53,5 +46,11 @@
 		</div>
 
 		<script type="text/javascript" src="js/stock.js"></script>
+		<script>
+			window.onload = function() {
+				document.getElementById('ticker').value = 'AAPL';
+				genStockData();
+			}
+		</script>
 	</body>
 </html>
