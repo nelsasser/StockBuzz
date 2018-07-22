@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stock Buzz</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script type="text/javascript" src="js/stock.js"></script>
+    <script type="text/javascript" src="js/twittergetter.js"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/stock_style.css">
+    <link rel="stylesheet" href="./css/tweet.css">
+</head>
+	<body>
+
+		<div class="topnav">
+			<a class="active" href="#home">Home</a>
+			<a href="#about">About</a>
+			<div class="search-container">
+				<input type="text" id="ticker" placeholder="Search.." name="search">
+				<button onclick="genStockData()">GO</button>
+			</div>
+
+			<div>
+				<center>
+					<center>
+						<h2 style="margin-top: 5%; ">StockBuzz</h2>
+					</center>
+					<center>
+						<p id="info1">Compare stocks values to public opinion through social media.</p>
+					</center>
+				</center>
+			</div>
+
+			<div id="stocks">
+				<div id="graph">
+					<canvas id="stock_chart" class="nope"></canvas>
+				</div>
+
+				<center>
+					<div id="info" class="stock_info">
+						<div class="stuff">
+							<p id="name">stock info appears here</p>
+						</div>
+
+						<div class="stuff">
+							<div class='price_text'>
+								<p id='diff'>difference</p>
+							</div>
+						</div>
+					</div>
+				</center>
+			</div>
+
+			<div id="tweets">
+				<div id="lower_tweets">
+					<div class="tweet">
+						<div class="user_data">
+							<img class="profile" src="profile.jpg" alt="profile picture" height="32px" width="32px">
+							<p class="handle">@jimijoe</p>
+						</div>
+						<div class="user_message">
+							<p class="message">Hey its me jimi joe! Hinga dinga durgann. I like making long ass tweets...</p>
+						</div>
+						<div class="user_meta">
+							<p class="time-stamp">10:17pm</p>
+						</div>
+					</div>
+
+					<div class="tweet">
+						<div class="user_data">
+							<img class="profile" src="profile.jpg" alt="profile picture" height="32px" width="32px">
+							<p class="handle">@jimijoe</p>
+						</div>
+						<div class="user_message">
+							<p class="message">Hey its me jimi joe! Hinga dinga durgann. I like making long ass tweets...</p>
+						</div>
+						<div class="user_meta">
+							<p class="time-stamp">10:17pm</p>
+						</div>
+					</div>
+
+					<div class="tweet">
+						<div class="user_data">
+							<img class="profile" src="profile.jpg" alt="profile picture" height="32px" width="32px">
+							<p class="handle">@jimijoe</p>
+						</div>
+						<div class="user_message">
+							<p class="message">Hey its me jimi joe! Hinga dinga durgann. I like making long ass tweets...</p>
+						</div>
+						<div class="user_meta">
+							<p class="time-stamp">10:17pm</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/stock.js"></script>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById('ticker').value = 'AAPL';
+				genStockData();
+			}
+		</script>
+	</body>
+</html>
