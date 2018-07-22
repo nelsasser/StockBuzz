@@ -18,7 +18,12 @@ function search() {
   var tweets = []
   
   statuses.forEach(function(status) {
-  	var msg = status.text;
+  	var msg = status.full_text;
+
+  	if(msg.length > 140) {
+  		msg = msg.split(0, 115) + ". . .";
+  	}
+
   	var handle = status.user.screen_name;
   	var date = status.created_at;
   	var retweet = status.retweet_count;

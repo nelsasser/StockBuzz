@@ -46,6 +46,7 @@
 .user_data {
 	display: block;
 	border-bottom: 2px solid #ededed;
+	height:10%;
 }
 
 .user_message {
@@ -58,7 +59,8 @@
 
 .handle {
 	color: blue;
-	transform: translate(10px, 10px);
+	transform: translate(10px, -10px);
+	padding-bottom: -10px;
 }
 
 .message {
@@ -78,6 +80,7 @@
 .retweet_container {
 	float: right;
 	margin-right: 20px;
+	margin-bottom: 0px;
 }
 
 .retweet {
@@ -89,6 +92,7 @@
 
 .like_container {
 	float: right;
+	margin-bottom: 0px
 }
 
 .icon {
