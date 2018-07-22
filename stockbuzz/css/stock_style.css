@@ -1,6 +1,7 @@
 #graph {
 	width: 100%;
 	height: 80%;
+	border-bottom: 3px solid #e2e2e2;
 }
 
 #stocks {
@@ -24,15 +25,14 @@
 	border: none;
 	-webkit-border-radius: 2px 2px 2px 2px;
 	border-radius: 2px 2px 1px 2px;
-	font: normal 18px/1 "cabin", Helvetica, sans-serif;
-	color: rgba(50,60,50,1);
+	font: normal 28px/1 "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 	-o-text-overflow: ellipsis;
 	text-overflow: ellipsis;
-	background: #d6d6d6;
+	background: #e9e9e9;
 	-webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
 	box-shadow: 0px 0px 0px 0 rgba(0,0,0,0.3) ;
 	text-shadow: 0px 0px 0px rgba(0,0,0,0.2) ;
-	margin-left: 10%;
+	margin-left: 0%;
 }
 
 .arrow-up {
@@ -45,7 +45,7 @@
 
 	display: inline-flex;
 
-	transform: translate(0, -15px);
+	transform: translate(-5px, -20px);
 }
 
 .arrow-down {
@@ -76,4 +76,18 @@
 
 .green_text {
 	color: green;
+}
+
+.loader {
+	border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
