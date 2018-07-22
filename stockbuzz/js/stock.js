@@ -1,3 +1,7 @@
+/**
+@authot: Nick Elsasser
+*/
+
 /*
 NEEDS TO BE OBFUSCATED BEFORE RELEASE
 */

@@ -7,6 +7,8 @@
 #stocks {
 	width: 50%;
 	border-right: 4px solid gray;
+	display: block;
+	float: left;
 }
 
 .nope {

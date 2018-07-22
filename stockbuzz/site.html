@@ -8,6 +8,7 @@
     <script type="text/javascript" src="js/twitterFetch.js"></script>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/stock_style.css">
+    <link rel='stylesheet' href="./css/tweet.css">
 </head>
 	<body>
 
@@ -22,10 +23,10 @@
 			<div>
 				<center>
 					<center>
-						<h2 style="transform: translate(2.8%, 0);">StockBuzz</h2>
+						<h2 style="margin-top: 5%;">StockBuzz</h2>
 					</center>
 					<center>
-						<p id="info1">Compare stocks values to public opinionn through solcial media.</p>
+						<p id="info1">Compare stocks values to public opinion through social media.</p>
 					</center>
 				</center>
 			</div>
@@ -49,10 +50,27 @@
 					</div>
 				</center>
 			</div>
+
+			<div id="tweets">
+				<div id="lower_tweets">
+					
+				</div>
+			</div>
+
+
 		</div>
 
 		<script type="text/javascript" src="js/search.js"></script>
 		<script type="text/javascript" src="js/stock.js"></script>
+		<script type="text/javascript" src="js/tweetbuilder.js"></script>
+
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById('ticker').value = 'AAPL';
+				genStockData();
+				twitterFetch();
+			}
+		</script>
 
 	</body>
 </html>
