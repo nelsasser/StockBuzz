@@ -1,5 +1,5 @@
 function twitterFetch(){
-  const url = 'stockbuzz-env.p7p8dnmtvv.us-east-2.elasticbeanstalk.com/twitter'
+  const url = 'http://stockbuzz-env.p7p8dnmtvv.us-east-2.elasticbeanstalk.com/twitter'
 
   var t = document.getElementById('ticker').value;
   var name = new Stock().requestStockQuote(t).name;
